@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marvel Live Action Timeline</title>
+  <meta name="description" content="A chronological Marvel live-action timeline across the multiverse.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brand-mark">MARVEL</div>
+      <div>
+        <p class="eyebrow">FULL LIVE-ACTION TIMELINE</p>
+        <h1>Marvel Timeline</h1>
+        <p class="subtitle">Chronological order, not release order.</p>
+      </div>
+      <button id="loginBtn" class="ghost-btn">Admin Login</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro panel">
+      <div>
+        <p class="eyebrow">HOW THE TIMELINE WORKS</p>
+        <h2>Your Marvel marathon, mapped across the multiverse.</h2>
+        <p>This timeline is primarily arranged chronologically according to when the events of each project take place. Where a project spans multiple years, placement is based on the period in which the majority of the story occurs, with significant flashbacks, flash forwards and other time periods noted separately.</p>
+        <p>Projects from different universes are included where they have meaningful connections to the wider Marvel multiverse. Where chronology cannot be reliably established, projects are placed according to release order or narrative relevance.</p>
+      </div>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section class="toolbar panel">
+      <div class="search-wrap">
+        <input id="search" type="search" placeholder="Search films, shows, characters, universes…" autocomplete="off">
+      </div>
+      <select id="eraFilter">
+        <option value="all">All eras</option>
+        <option value="Pre 2000s">Pre 2000s</option>
+        <option value="2000s">2000s</option>
+        <option value="2010s">2010s</option>
+        <option value="2020s">2020s</option>
+      </select>
+      <select id="universeFilter"><option value="all">All universes</option></select>
+      <select id="sortFilter">
+        <option value="timeline">Timeline order</option>
+        <option value="release">Release year</option>
+        <option value="title">Title A–Z</option>
+        <option value="rating">My rating</option>
+      </select>
+      <button id="resetFilters" class="ghost-btn">Reset</button>
+    </section>
+
+    <section id="timeline" class="timeline"></section>
+    <div id="empty" class="empty panel hidden">Nothing matched your search.</div>
+  </main>
+
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast"></div>
+
+  <footer>
+    <p>Fan-made project. Not affiliated with Marvel, Marvel Studios, Disney, Sony Pictures or any other rights holder.</p>
+    <p>Timeline content based on the creator's supplied timeline document.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>
